@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: grid;
+      grid-template-areas:
+      "header header header"
+      "nav section aside"
+      "footer footer footer";
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  gap: 10px;
+  padding: 10px;
+  background-color: #D1E9F6;
+}
+
+header {
+  grid-area: header;
+  background-color: #2a577c;
+  color: #e5d5d8;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  border-radius: 2%;
+}
+
+header img {
+  width: 90px; 
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 22px; /* jarak gambar dan teks */
+}
+
+nav {
+  grid-area: nav;
+  background-color: #8aa4b0;
+  padding: 20px;
+  border-radius: 2%;
+}
+
+nav ul li a {
+  background-color: #2a577c; 
+  text-decoration: none; 
+  color: white;
+  display: inline-block; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+  background-color: #1e4a63;
+}
+
+section {
+  grid-area: 50%;
+  background-color: #b8a7ab;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+}
+
+section li {
+  font-size: 13px; 
+  padding-left: 20px; /* Jarak antara teks dan tepi kiri */
+}  
+
+.button {
+  background-color: #2a577c; 
+  padding: 10px; 
+  border-radius: 5px;
+}
+
+aside {
+  grid-area: 25%;
+  background-color: #FEF9F2;
+  padding: 20px;
+  border-radius: 2%;
+}
+
+aside ul {
+  list-style-type: disc; /*bulet-bulet di kiri*/
+  padding-left: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #51829B;
+  color: white;
+  padding: 20px;
+  border-radius: 2%;
+
+  display: flex;
+  justify-content: space-between; /* Membuat jarak di antara elemen */
+  align-items: center; /* Vertikal tengah */
+}
+
+footer .left {
+  text-align: left; /* Teks rata kiri */
+}
+
+footer .center {
+  text-align: center;
+  flex-grow: 1; /* Agar bagian tengah fleksibel */
+}
+
+footer .right {
+  text-align: right; /* Teks rata kanan */
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+p, li {
+  margin-bottom: 5px;
+}
+
+/*layout smartphone*/
+@media screen and (max-width: 767px) {
+  body {
+      grid-template-areas:
+      "header"
+      "nav"
+      "section"
+      "aside"
+      "footer";
+      grid-template-columns: 1fr;
+  }
+
+  /*bagian header*/
+  header {
+      background-color: #2a577c;
+      font-size: 10px;
+  }
+  header img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 22px; /* jarak gambar dan teks */
+  }
+
+/*bagian nav*/
+  nav {
+      background-color: #8aa4b0;
+      padding: auto;
+      height: 15vh;
+      overflow-y: auto;
+  }
+
+  nav ul li a {
+    background-color: #2a577c; 
+    text-decoration: none; 
+    color: white;
+    display: inline-block; 
+    padding: 7px 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #1e4a63;
+  }
+
+  /*bagian section*/
+  section {
+    background-color: #b8a7ab;
+    padding: 20px;
+    height: 41vh;
+  }
+  section li {
+    font-size: 7px; 
+    padding-left: 20px; /* Jarak antara teks dan tepi kiri */
+  }  
+  section p {
+    font-size: 10px;
+  }
+  section h2{
+  font-size: 13px;
+  }
+  table td a {
+    font-size: 10px; /* Mengurangi ukuran font teks tombol */
+  }
+
+  h2 {
+      font-size: 10px;
+  }
+
+  /*bagian aside*/
+  aside {
+    background-color: #FEF9F2;
+    overflow-y: auto;
+  }
+  aside ul li {
+    font-size: 10px; 
+    padding-left: 5px; /* Jarak antara teks dan tepi kiri */
+  }  
+  aside p {
+    font-size: 10px;
+  }
+  aside h3{
+  font-size: 13px;
+  }
+
+  /*bagian footer*/
+  footer {
+      background-color: #51829B;
+      font-size: 6px;
+  }
+}
+
+/* Layout tablet potret */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "section"
+        "aside"
+        "footer";
+    grid-template-columns: 1fr; /* Satu kolom */
+
+  }
+
+    header {
+      background-color: #2a577c;
+      padding: 10px;
+      text-align: center;
+      font-size: 20px;
+      color: white;
+    }
+
+    nav {
+      background-color: #8aa4b0;
+      padding: 20px;
+      display: flex;
+      overflow-y: auto;
+      max-height: 80px;
+      justify-content: space-around;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 5;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    section {
+      background-color: #b8a7ab;
+      overflow-y: auto;
+      grid-area: auto;
+      height: 50vh;
+    }
+
+    aside {
+      background-color: #FEF9F2;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    footer {
+      background-color: #51829B;
+      padding: 10px;
+      text-align: center;
+    }
+}
+
+/* Layout tablet dalam mode lanskap */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav section"
+        "aside aside"
+        "footer footer";
+    grid-template-columns: 25% 75%; /* Nav mengambil 25% lebar, section mengambil 75% */
+    grid-template-rows: auto 1fr auto; /* Tinggi baris yang fleksibel */
+    height: 100vh;
+    gap: 10px; /* Jarak antara elemen-elemen */
+    padding: 10px;
+  }
+
+  header {
+    grid-area: header;
+    background-color: #2a577c;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    border-bottom: 2px solid #999;
+  }
+
+  nav {
+    grid-area: nav;
+    background-color: #8aa4b0;
+    padding: 20px;
+    border-right: 2px solid #999;
+  }
+
+  section {
+    grid-area: section;
+    background-color: #b8a7ab;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  aside {
+    grid-area: aside;
+    background-color: #FEF9F2;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: #51829B;
+    padding: 10px;
+    text-align: center;
+  }
+}
